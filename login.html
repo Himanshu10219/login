@@ -62,6 +62,7 @@
         document.getElementById('contactForm')
             .addEventListener('submit', githubSignin);
         function githubSignin() {
+            console.log("githubSignin");
             firebase.auth().signInWithPopup(provider)
 
                 .then(function (result) {
