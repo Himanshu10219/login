@@ -15,7 +15,7 @@
 	width: 50%; height:auto;">
 
     <h2 class="text-primary" style="margin-left: 15px; margin-bottom: 10px">
-        Hey There,Help Us In Collecting Data
+        User Login Page
     </h2>
 
     <form class="container" id="contactForm">
@@ -43,53 +43,7 @@
         </div>
     </form>
 
-    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
-    </script>
-
-    <script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyD87KFZBPE9T6NjATNAY1e4jdSznRQRXSk",
-            authDomain: "login-2ae9e.firebaseapp.com",
-            projectId: "login-2ae9e",
-            storageBucket: "login-2ae9e.appspot.com",
-            messagingSenderId: "1030010808330",
-            appId: "1:1030010808330:web:fb25fee89d3851526a97f3",
-            measurementId: "G-R6YKZKDWDG"
-        };
-
-        firebase.initializeApp(firebaseConfig);
-        var provider = new firebase.auth.GithubAuthProvider();
-        document.getElementById('contactForm')
-            .addEventListener('submit', githubSignin);
-        function githubSignin() {
-            console.log("githubSignin");
-            firebase.auth().signInWithPopup(provider)
-
-                .then(function (result) {
-                    var token = result.credential.accessToken;
-                    var user = result.user;
-
-                    console.log(token)
-                    console.log(user)
-                }).catch(function (error) {
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-
-                    console.log(error.code)
-                    console.log(error.message)
-                });
-        }
-
-        function githubSignout() {
-            firebase.auth().signOut()
-
-                .then(function () {
-                    console.log('Signout successful!')
-                }, function (error) {
-                    console.log('Signout failed')
-                });
-        }
-    </script>
+    
 </body>
 
 </html>
